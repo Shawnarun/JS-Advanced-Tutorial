@@ -1,8 +1,8 @@
 
 
 
-//Super
-//Getters & Setters
+
+
 //Destructring
 //Nested Objects
 //Arrays of Objects
@@ -109,35 +109,102 @@ fron an existing class(parent -> child)
 helps with code reusabilities
 */
 
-class Animal{
-    alive=true;
+/* Super - > keyword is used in classes to call the constructor 
+or access the properties and methods of parent
+this - > object
+super -> parent */
 
-    eat(){
-        console.log(`This ${this.name} is eating`)
-    }
-    sleep(){
-        console.log(`This ${this.name} is sleeping`)
-    }
-}
+// class Animal{
+//     alive=true;
 
-class Rabit extends Animal{
-    name="rabit";
+//     constructor(name,age){
+//         this.name=name;
+//         this.age=age;
+//     }
+
+//     eat(){
+//         console.log(`This ${this.name} is eating`)
+//     }
+//     sleep(){
+//         console.log(`This ${this.name} is sleeping`)
+//     }
+// }
+
+// class Rabit extends Animal{
+
+//     constructor(name,age,runSpeed){
+//         super(name,age);
+//         this.runSpeed=runSpeed;
+//     }
  
+// }
+
+// class Fish extends Animal{
+   
+//     constructor(name,age,swimSpeed){
+//         super(name,age);
+//         this.swimSpeed=swimSpeed;
+//     }
+
+// }
+
+// class Hawk extends Animal{
+   
+//     constructor(name,age,flySpeed){
+//         super(name,age);
+//         this.flySpeed=flySpeed;
+//     }
+
+// }
+
+// const rabit1 = new Rabit("bunny",2,50.5);
+// const fish1 = new Fish();
+// const hawk1 = new Hawk();
+
+// console.log(rabit1.age)
+
+
+
+
+
+/****************************************************************/
+
+/*Getters & Setters*/
+
+class Rectangle{
+    constructor(width,height){
+        this.width=width;
+        this.height=height;
+    }
+
+    set width(newWidth){
+        if(newWidth>0){
+            this._width= newWidth;
+        }
+        else{
+            console.error("Width must be positive number");
+        }
+    }
+
+    set height(newheight){
+        if(newheight>0){
+            this._height= newheight;
+        }
+        else{
+            console.error("Height must be positive number");
+        }
+    }
+
+    get width(){
+        return this._width;
+    }
+
+    get height(){
+        return this._height;
+    }
 }
 
-class Fish extends Animal{
-    name="fish";
+const r1= new Rectangle(15 , 25);
 
-}
-
-class Hawk extends Animal{
-    name="hawk";
-
-}
-
-const rabit1 = new Rabit();
-const fish1 = new Fish();
-const hawk1 = new Hawk();
-
-rabit1.sleep();
-fish1.eat();
+console.log(r1.height);
+console.log(r1.width);
