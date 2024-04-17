@@ -1,12 +1,10 @@
 
-
-
-
-
-//Destructring
 //Nested Objects
 //Arrays of Objects
 //Sorting
+//Date
+//Time interval
+//Module
 
 /****************************************************************/
 /***Objects -> A Collection of related properties or methods
@@ -171,40 +169,100 @@ super -> parent */
 
 /*Getters & Setters*/
 
-class Rectangle{
-    constructor(width,height){
-        this.width=width;
-        this.height=height;
-    }
+// class Rectangle{
+//     constructor(width,height){
+//         this.width=width;
+//         this.height=height;
+//     }
 
-    set width(newWidth){
-        if(newWidth>0){
-            this._width= newWidth;
-        }
-        else{
-            console.error("Width must be positive number");
-        }
-    }
+//     set width(newWidth){
+//         if(newWidth>0){
+//             this._width= newWidth;
+//         }
+//         else{
+//             console.error("Width must be positive number");
+//         }
+//     }
 
-    set height(newheight){
-        if(newheight>0){
-            this._height= newheight;
-        }
-        else{
-            console.error("Height must be positive number");
-        }
-    }
+//     set height(newheight){
+//         if(newheight>0){
+//             this._height= newheight;
+//         }
+//         else{
+//             console.error("Height must be positive number");
+//         }
+//     }
 
-    get width(){
-        return this._width;
-    }
+//     get width(){
+//         return this._width;
+//     }
 
-    get height(){
-        return this._height;
-    }
+//     get height(){
+//         return this._height;
+//     }
+// }
+
+// const r1= new Rectangle(15 , 25);
+
+// console.log(r1.height);
+// console.log(r1.width);
+
+
+
+
+
+
+
+
+/****************************************************************/
+
+/*Destructuring - > extract values from arrays and objects,
+then assign them to variables in a convenient way
+*/
+/*********************  Example 1***************** */
+
+// let a=15;
+// let b=21;
+
+// [a , b] = [b ,a] ;
+// console.log(a);
+// console.log(b)
+
+
+/*********************  Example 2***************** */
+// const  colors=["red" , "green" , "blue", "black", "white"];
+// [colors[0], colors[4]] = [colors[4] , colors[0]];
+
+// console.log(colors);
+
+
+/*********************  Example 3***************** */
+
+// const[firstColor,secondColor,thirdColor, ...extraColors] = colors;
+// console.log(firstColor);
+// console.log(secondColor);
+// console.log(thirdColor);
+// console.log(extraColors);
+
+/*********************  Example 4***************** */
+
+
+const student={
+    firstName:"Shawn",
+    lastName:"Arunjith",
+    age:28
 }
 
-const r1= new Rectangle(15 , 25);
+// const{firstName,lastName,age}=student;
+// console.log(firstName);
+// console.log(lastName);
+// console.log(age)
 
-console.log(r1.height);
-console.log(r1.width);
+
+function displayPerson({firstName,lastName,age}){
+        console.log(firstName);
+        console.log(lastName);
+        console.log(age)
+}
+
+displayPerson(student);
