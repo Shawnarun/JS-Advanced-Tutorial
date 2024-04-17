@@ -1,5 +1,5 @@
 
-//Nested Objects
+
 //Arrays of Objects
 //Sorting
 //Date
@@ -247,22 +247,75 @@ then assign them to variables in a convenient way
 /*********************  Example 4***************** */
 
 
-const student={
-    firstName:"Shawn",
-    lastName:"Arunjith",
-    age:28
+// const student={
+//     firstName:"Shawn",
+//     lastName:"Arunjith",
+//     age:28
+// }
+
+// // const{firstName,lastName,age}=student;
+// // console.log(firstName);
+// // console.log(lastName);
+// // console.log(age)
+
+
+// function displayPerson({firstName,lastName,age}){
+//         console.log(firstName);
+//         console.log(lastName);
+//         console.log(age)
+// }
+
+// displayPerson(student);
+
+
+
+
+
+
+/********************************************************** */
+/* Nested Objects */
+
+const person={
+    fullname:"Shawn",
+    age:30,
+    isStudent:true,
+    hobbies: ["Singing","Video Games","Coding"],
+    address: {
+        street : "Old rest house Road",
+        city:"Batticalo",
+        country:"Srilanka",
+        contact:{
+            officeNumber:"+9458658",
+            mobileNumber:"+96587855"
+        }
+
+    }
 }
 
-// const{firstName,lastName,age}=student;
-// console.log(firstName);
-// console.log(lastName);
-// console.log(age)
+
+console.log(person.fullname);
+console.log(person.hobbies[0]);
+console.log(person.address.country);
+console.log(person.address.contact.mobileNumber);
 
 
-function displayPerson({firstName,lastName,age}){
-        console.log(firstName);
-        console.log(lastName);
-        console.log(age)
+class Person{
+    constructor(name,age, ...address){
+        this.name=name;
+        this.age=age;
+        this.address= new Address(...address)
+    }
 }
 
-displayPerson(student);
+class Address{
+    constructor(street,city,country){
+        this.street=street;
+        this.city=city;
+        this.country=country;
+    }
+}
+
+
+const person1= new Person("Shawn",28,"Main Road","Batticaloa","Sri Lanka");
+
+console.log(person1.address.city)
