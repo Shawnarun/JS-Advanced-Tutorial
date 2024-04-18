@@ -1,8 +1,6 @@
 
 
-//Arrays of Objects
-//Sorting
-//Date
+
 //Time interval
 //Module
 
@@ -275,47 +273,203 @@ then assign them to variables in a convenient way
 /********************************************************** */
 /* Nested Objects */
 
-const person={
-    fullname:"Shawn",
-    age:30,
-    isStudent:true,
-    hobbies: ["Singing","Video Games","Coding"],
-    address: {
-        street : "Old rest house Road",
-        city:"Batticalo",
-        country:"Srilanka",
-        contact:{
-            officeNumber:"+9458658",
-            mobileNumber:"+96587855"
-        }
+// const person={
+//     fullname:"Shawn",
+//     age:30,
+//     isStudent:true,
+//     hobbies: ["Singing","Video Games","Coding"],
+//     address: {
+//         street : "Old rest house Road",
+//         city:"Batticalo",
+//         country:"Srilanka",
+//         contact:{
+//             officeNumber:"+9458658",
+//             mobileNumber:"+96587855"
+//         }
 
-    }
+//     }
+// }
+
+
+// console.log(person.fullname);
+// console.log(person.hobbies[0]);
+// console.log(person.address.country);
+// console.log(person.address.contact.mobileNumber);
+
+
+// class Person{
+//     constructor(name,age, ...address){
+//         this.name=name;
+//         this.age=age;
+//         this.address= new Address(...address)
+//     }
+// }
+
+// class Address{
+//     constructor(street,city,country){
+//         this.street=street;
+//         this.city=city;
+//         this.country=country;
+//     }
+// }
+
+
+// const person1= new Person("Shawn",28,"Main Road","Batticaloa","Sri Lanka");
+
+// console.log(person1.address.city)
+
+
+// person={
+//     name:"Shawn",
+//     age:28,
+//     address:{
+//         street:"main Road",
+//         city:"batticaloa",
+//         country:"Srilanka"
+//     }
+
+// }
+
+
+
+/********************************************************** */
+//Arrays of Objects
+
+// const fruits=[{name: "apple",color:"red",calories:95},
+//             {name: "orange",color:"orange",calories:45},
+//             {name: "banana",color:"yellow",calories:105},
+//             {name: "coconut",color:"white",calories:156}]
+
+// // fruits.push({name: "graphs",color:"purple",calories:250})
+// // fruits.pop();
+// // fruits.splice(1,2);
+
+// //forEach()
+// fruits.forEach(fruit=> console.log(fruit.name));
+
+// //map()
+// const fruitNames = fruits.map(fruit=>fruit.calories);
+
+// //fillter()
+// const lowCalories = fruits.filter(fruit=>fruit.calories <100);
+
+// //reduce()
+// const maxFruit = fruits.reduce((max,fruit)=>
+//                                  fruit.calories > max.calories ?
+//                                  fruit : max );
+
+// console.log(maxFruit)
+
+
+
+/********************************************************** */
+
+/*sort() -> Sort elements Strings in lexicographic order
+lexicographic - > (alphabate, numbers , sympole) as string
+
+ */
+
+
+// let students =["Shawn","Arunjith1",,"Aarunjith2","Niroshan","Thayuran","Kalai"];
+
+// let numbers=[1,10,2,4,3,5,8,7,6]
+
+// const people =[{name:"Shawn",age:"28",gpa:3.5},
+//                 {name:"Thayuran",age:"26",gpa:3.4},
+//                 {name:"Kalai",age:"25",gpa:4.0},
+//                 {name:"Gajanan",age:"30",gpa:3.9},
+
+// ]
+
+// people.sort((a,b)=>b.gpa - a.gpa);
+
+// console.log(people)
+
+/********************************************************** */
+//fisher-yates algorithm
+
+// const cards =['A',2,3,4,5,6,7,8,9,10,'J','Q','K'];
+
+// shuffle(cards);
+// console.log(cards)
+
+// function shuffle(array){
+
+//         for(let i=array.length -1; i >0 ;i--){
+//             const random =Math.floor(Math.random() * (i +1));  
+
+//             [array[i],array[random]] = [array[random],array[i]] ;
+//         }
+// }
+
+
+
+/*********************************************************************/
+
+/*Date*/
+
+//Date(year,Month,day,miniute, second , ms)
+// const date = new Date();
+
+// const year = date.getFullYear();
+// const month = date.getMonth();
+// const day = date.getDate();
+// const miniutes =  date.getMinutes();
+// const daysOfWeeks = date.getDay();
+
+// console.log(year)
+// console.log(month)
+// console.log(day)
+// console.log(miniutes)
+// console.log(daysOfWeeks)
+
+/*********************************************************************/
+
+
+/*Closure - > A function defined inside of another ,
+the inner function has access to the variables and scope of
+the outer function*/ 
+
+
+// function outer(){
+
+//   let msg ="Hello";
+
+//     function inner(){
+//             console.log(msg);
+//     }
+//     inner();
+// }
+
+
+
+
+// outer();
+
+/*********************************************************************/
+
+
+/* setTimeout -> function in JS that allows you to schedule the excution 
+of a function after an amount of time (ms)
+
+setTimeout(callback , delay)*/
+
+
+function sayHi(){
+    window.alert("Hello");
+}
+
+let timeoutId;
+
+function startTimer(){
+    timeoutId = setTimeout(()=> window.alert("Hello"),3000);
+    console.log("STARTED");
+}
+
+function clearTimer(){
+    clearTimeout(timeoutId);
+    console.log("CLEARED");
 }
 
 
-console.log(person.fullname);
-console.log(person.hobbies[0]);
-console.log(person.address.country);
-console.log(person.address.contact.mobileNumber);
-
-
-class Person{
-    constructor(name,age, ...address){
-        this.name=name;
-        this.age=age;
-        this.address= new Address(...address)
-    }
-}
-
-class Address{
-    constructor(street,city,country){
-        this.street=street;
-        this.city=city;
-        this.country=country;
-    }
-}
-
-
-const person1= new Person("Shawn",28,"Main Road","Batticaloa","Sri Lanka");
-
-console.log(person1.address.city)
+/*********************************************************************/
