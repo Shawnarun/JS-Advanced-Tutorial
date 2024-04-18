@@ -455,21 +455,41 @@ of a function after an amount of time (ms)
 setTimeout(callback , delay)*/
 
 
-function sayHi(){
-    window.alert("Hello");
-}
+// function sayHi(){
+//     window.alert("Hello");
+// }
 
-let timeoutId;
+// let timeoutId;
 
-function startTimer(){
-    timeoutId = setTimeout(()=> window.alert("Hello"),3000);
-    console.log("STARTED");
-}
+// function startTimer(){
+//     timeoutId = setTimeout(()=> window.alert("Hello"),3000);
+//     console.log("STARTED");
+// }
 
-function clearTimer(){
-    clearTimeout(timeoutId);
-    console.log("CLEARED");
-}
+// function clearTimer(){
+//     clearTimeout(timeoutId);
+//     console.log("CLEARED");
+// }
 
 
 /*********************************************************************/
+
+function updateClock(){
+
+        const now = new Date();
+        let hour = now.getHours().toString().padStart(2,0);
+
+        const meridiem = hour >=12 ? "PM":"AM";
+        hour = hour % 12 || 12;
+
+
+        const minute =now.getMinutes().toString().padStart(2,0);
+        const seconds =now.getSeconds().toString().padStart(2,0);
+
+        const timeString= `${hour}:${minute}:${seconds} ${meridiem}`;
+
+        document.getElementById("clock").textContent=timeString;
+}
+
+updateClock();
+setInterval(updateClock,1000);
