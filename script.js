@@ -474,22 +474,211 @@ setTimeout(callback , delay)*/
 
 /*********************************************************************/
 
-function updateClock(){
+// function updateClock(){
 
-        const now = new Date();
-        let hour = now.getHours().toString().padStart(2,0);
+//         const now = new Date();
+//         let hour = now.getHours().toString().padStart(2,0);
 
-        const meridiem = hour >=12 ? "PM":"AM";
-        hour = hour % 12 || 12;
+//         const meridiem = hour >=12 ? "PM":"AM";
+//         hour = hour % 12 || 12;
 
 
-        const minute =now.getMinutes().toString().padStart(2,0);
-        const seconds =now.getSeconds().toString().padStart(2,0);
+//         const minute =now.getMinutes().toString().padStart(2,0);
+//         const seconds =now.getSeconds().toString().padStart(2,0);
 
-        const timeString= `${hour}:${minute}:${seconds} ${meridiem}`;
+//         const timeString= `${hour}:${minute}:${seconds} ${meridiem}`;
 
-        document.getElementById("clock").textContent=timeString;
-}
+//         document.getElementById("clock").textContent=timeString;
+// }
 
-updateClock();
-setInterval(updateClock,1000);
+// updateClock();
+// setInterval(updateClock,1000);
+
+/*********************************************************************/
+
+/*ES6 modules => AN external file that contains reusable
+ code that
+can be imported into other JavaScript files.*/
+
+// import {PI,sayHi}  from './math.js';
+
+// console.log(PI);
+// sayHi("Hello");
+
+
+
+
+
+
+
+/*********************************************************************/
+
+/* synchronous => Excutes line by line consecuitively in a sequential
+manner code that waits for an operation to complete
+
+asynchronus => Allows multiple operation to be performed concurrently 
+waiting  Doesnt block the execution flow and allows the program to continue */
+
+// setTimeout(()=> console.log("Task 01"),3000)
+// console.log("Task 02");
+// console.log("Task 03");
+// console.log("Task 04");
+
+
+/*********************************************************************/
+
+/*Error => An object that is created represented a problem that occurs 
+often with user input or establishing a connection
+Netwoek issue
+promises rejection
+security errors
+
+ */
+
+// console.lag("Task 04");
+// console.log(x);
+// console.log("End");
+
+
+// try{
+        
+//         let age =10;
+
+//         if(age<18){
+//           throw new Error(" Age must be above 18");
+//         }
+
+
+// }
+// catch(error){
+//         console.log(error);
+
+// }
+// finally{
+//         console.log("I am in finally block");
+// }
+// console.log("End");
+
+
+/*********************************************************************/
+
+/* DOM =>  Document Object Model
+object{} that represent the page you see in the web browser
+and provides you with an API to interact with it */
+
+// console.log(document);
+// document.title="Developers Stack Academy";
+// document.body.style.backgroundColor="white";
+// document.title="My website";
+// document.body.style.backgroundColor="red";
+
+
+
+
+
+
+/*********************************************************************/
+/*Element selectors =>
+1. document.getElementById // Element 
+2. document.getElementsClassName() // HTML Collection
+3.document.getElementByTagName() // HTML Collection
+4.document.querySelector() // Element
+5.document.querySelectorAll() //NODELIST
+*/
+
+// const heading = document.getElementById("myHeading");
+// heading.style.backgroundColor="blue";
+// heading.style.color="red";
+// console.log(heading);
+
+
+// const myDivs= document.getElementsByClassName("myDiv");
+// myDivs[2].style.backgroundColor="blue";
+// console.log(myDivs);
+
+// for(let a of myDivs){
+//         a.style.backgroundColor="blue";
+// }
+
+// const h4Elements = document.getElementsByTagName("h2");
+// const liElements = document.getElementsByTagName("li");
+// h4Elements[0].style.backgroundColor="blue";
+// console.log(h4Elements);
+
+// const element = document.querySelector("h2");
+// element.style.backgroundColor="blue";
+
+// const elements = document.querySelectorAll("li");
+// elements[1].style.backgroundColor="blue";
+// console.log(elements);
+
+
+
+
+
+
+
+
+
+
+
+/*********************************************************************/
+/* DOM Navigation => The process of navigating through the structure
+of an HTML document using Javasacript
+
+.firstElementChild
+.lastElementChild
+.nextElementSibiling
+.previousElementSibiling
+.parentElement
+.children
+*/
+
+// const element = document.getElementById("rVeg");
+
+// const firstChild = element.firstElementChild;
+// const lastChild = element.lastElementChild;
+// firstChild.style.backgroundColor="pink";
+// lastChild.style.backgroundColor="green";
+
+// const ulElements= document.querySelectorAll("ul");
+
+// ulElements.forEach(ulElement => {
+//         const lastChild = ulElement.lastElementChild;
+//         lastChild.style.backgroundColor="green";
+// });
+
+// const element = document.getElementById("rVeg");
+// const children = element.children;
+// console.log(children);
+
+
+// Array.from(children).forEach(child =>{
+//         child.style.backgroundColor="blue";
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************************************************************/
+/*eventListener => Listen for specfic events to create interactive wep pages
+events : click ,mouseover,mouseout  ,keydown, keyup*/
+
+// const mybox = document.getElementById("myBox");
+
+// mybox.addEventListener("click",event=>{
+//         event.target.style.backgroundCLor="red";
+// })
+
+
+/*********************************************************************/

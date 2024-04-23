@@ -1,6 +1,7 @@
 body{
     margin: 0;
     background-color: hsl(0, 100%, 0%);
+    color: white;
 }
 
 #clock-container{
